@@ -64,9 +64,9 @@
                 <label for="email" class="form-label">Tipo di Lavoro</label>
                 <select class="form-select mb-3" id="lavori" aria-label="Default select example" required>
                   <option selected>Seleziona il tipo di lavoro</option>
-                  <option value="Backend Development">Backend Development</option>
-                  <option value="Frontend Development">Frontend Development</option>
-                  <option value="Project Analysis">Project Analysis</option>
+                  <option value="1">Backend Development</option>
+                  <option value="2">Frontend Development</option>
+                  <option value="3">Project Analysis</option>
                 </select>
                 <div class="mb-3">
                   <!-- Inserisco Textarea per richieste dell'utente -->
@@ -86,7 +86,7 @@
                 <div class="d-flex align-items-center justify-content-around mb-5">
                   <!-- Bottone Calcolo preventivo -->
                   <button type="submit" id="bottone" class="btn btn-primary ">Calcola preventivo</button>
-                  <span>Prezzo Finale</span>
+                  <span id="risultato">Prezzo Finale</span>
                 </div>
               </form>
             </div>
