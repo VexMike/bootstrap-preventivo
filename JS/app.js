@@ -31,6 +31,9 @@ const lavoriElement = document.getElementById("lavori");
 const sconti = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 // console.log(sconti);
 
+// const codicePromo = document.getElementById('codicepromo');
+// console.log(codicePromo);
+
 const buttonElement = document.getElementById("bottone");
 // console.log(buttonElement);
 
@@ -40,9 +43,11 @@ const risultatoElement = document.getElementById('risultato');
 formElement.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const form = formElement.value;
-    // console.log(form);
-
+    // const form = formElement.value;
+    // // console.log(form);
+    // function name(params) {
+        
+    // }
     // Raccolgo il value delle options dalla select
     const lavori = document.getElementById("lavori").value;
     // console.log(lavori);
@@ -50,7 +55,7 @@ formElement.addEventListener('submit', function (event) {
     // SE utente seleziona value '1' --> 20.50
     // ALTRIMENTI SE seleziona value '2' --> 15.30
     // ALTRIMENTI SE seleziona value '3' --> 33.60
-    if (lavori.length === '1') {
+    if (lavori === '1') {
         prezzoOra = 20.50;
     } else if (lavori === '2') {
         prezzoOra = 15.30;
@@ -72,22 +77,17 @@ formElement.addEventListener('submit', function (event) {
     // ALTRIMENTI 
     // - avvisiamo che il codice non è valido
     
-
     for (let i = 0; i < sconti.length; i++) {
-        const codice = sconti[i];
-        // console.log(codice);
-        
+        console.log(sconti[i]);
 
-    
-    if (codice.length === 7 && /^[A-A0-9]+$/.test(codice)) {
-        
-        const lunghezzaCodice = codice.length
-        
-        console.log(`Il codice ${codice} è lungo ${lunghezzaCodice}`);
-
-    } else {
-    // console.log('Codice non Valido');
-    }}
+        const codicePromo = document.getElementById('codicepromo');
+        const promo = codicePromo.value
+        if (sconti.includes(promo)) {
+            console.log('Codice valido');
+        } else {
+            console.log('Codice non valido');
+        }
+    }
 
     // Stampo il prezzo nella pagina
     // Utilizzo il risultato del prezzo in base al tipo di lavoro selezionato
