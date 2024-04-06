@@ -47,27 +47,39 @@
               <!-- Aggiungo titolo e richiesta -->
               <h1>Richiesta Preventivo</h1>
               <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
-              <form id="form-commissioni">
+              <form id="form-commissioni" class="row g-3 needs-validation" novalidate>
                 <div class="mb-3">
                   <label for="nome" class="form-label">Nome</label>
-                  <input type="text" name="nome" class="form-control" id="nome" placeholder="Inserisci nome" required>
+                  <input type="text" name="nome" class="form-control is-invalid" id="nome" placeholder="Inserisci nome" required>
+                  <div class="invalid-feedback">
+                    Il nome è obbligatorio
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="cognome" class="form-label">Cognome</label>
-                  <input type="text" name="cognome" class="form-control" id="cognome" placeholder="Inserisci cognome" required>
+                  <input type="text" name="cognome" class="form-control is-invalid" id="cognome" placeholder="Inserisci cognome" required>
+                  <div class="invalid-feedback">
+                    Il cognome è obbligatorio
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" name="email" class="form-control" id="email" placeholder="Inserisci email" required>
+                  <input type="email" name="email" class="form-control is-invalid" id="email" placeholder="Inserisci email" required>
+                  <div class="invalid-feedback">
+                    L'email è obbligatoria
+                  </div>
                 </div>
                 <!-- Aggiungo la selezione dei lavori richiesti per l'utente -->
                 <label for="email" class="form-label">Tipo di Lavoro</label>
-                <select class="form-select mb-3" id="lavori" aria-label="Default select example" required>
+                <select class="form-select mb-3 is-invalid" id="lavori" aria-label="Default select example" required>
                   <option selected>Seleziona il tipo di lavoro</option>
                   <option value="1">Backend Development</option>
                   <option value="2">Frontend Development</option>
                   <option value="3">Project Analysis</option>
                 </select>
+                <div class="invalid-feedback mt-0">
+                  Seleziona il tipo di lavoro
+                </div>
                 <div class="mb-3">
                   <!-- Inserisco Textarea per richieste dell'utente -->
                   <label for="textarea" class="form-label">Text area con Bootstrap 5</label>
@@ -81,12 +93,18 @@
                 <div class="mb-3 form-check">
                   <!-- Check Privacy Policy -->
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-                  <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
+                  <label class="form-check-label is-invalid" for="exampleCheck1">Accetto la Privacy Policy</label>
+                  <div class="invalid-feedback">
+                    Spunta richiesta
+                  </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-around mb-5">
                   <!-- Bottone Calcolo preventivo -->
                   <button type="submit" id="bottone" class="btn btn-primary ">Calcola preventivo</button>
-                  <span id="risultato">Prezzo Finale</span>
+                  <div>
+                    <p class="d-flex fs-6 fw-bold">Prezzo Finale</p>
+                    <span id="risultato" class="d-flex justify-content-center fw-bold"></span>
+                  </div>
                 </div>
               </form>
             </div>
