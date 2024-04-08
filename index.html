@@ -51,21 +51,21 @@
                 <div class="mb-3">
                   <label for="nome" class="form-label">Nome</label>
                   <input type="text" name="nome" class="form-control is-invalid" id="nome" placeholder="Inserisci nome" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="togliere-feedback">
                     Il nome è obbligatorio
                   </div>
                 </div>
                 <div class="mb-3">
                   <label for="cognome" class="form-label">Cognome</label>
                   <input type="text" name="cognome" class="form-control is-invalid" id="cognome" placeholder="Inserisci cognome" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="togliere-feedback">
                     Il cognome è obbligatorio
                   </div>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input type="email" name="email" class="form-control is-invalid" id="email" placeholder="Inserisci email" required>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="togliere-feedback">
                     L'email è obbligatoria
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                   <option value="2">Frontend Development</option>
                   <option value="3">Project Analysis</option>
                 </select>
-                <div class="invalid-feedback mt-0">
+                <div class="invalid-feedback mt-0" id="togliere-feedback">
                   Seleziona il tipo di lavoro
                 </div>
                 <div class="mb-3">
@@ -89,13 +89,13 @@
                   <!-- Se in possesso, aggiungere codice promo per uno sconto -->
                   <label for="codicepromo" class="form-label">Codice promozionale (opzionale)</label>
                   <input type="text" name="codicepromo" class="form-control" id="codicepromo" placeholder="Inserisci codice">
-                  <span class="d-none" id="nonvalido">Codice inserito non valido</span>
+                  <span class="d-none text-danger" id="nonvalido">Codice inserito non valido</span>
                 </div>
                 <div class="mb-3 form-check">
                   <!-- Check Privacy Policy -->
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                   <label class="form-check-label is-invalid" for="exampleCheck1">Accetto la Privacy Policy</label>
-                  <div class="invalid-feedback">
+                  <div class="invalid-feedback" id="togliere-feedback">
                     Spunta richiesta
                   </div>
                 </div>
