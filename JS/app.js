@@ -28,7 +28,9 @@ const lavoriElement = document.getElementById("lavori");
 
 const sconti = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 
-const codicePromo = document.getElementById('codicepromo');
+const codicePromoElement = document.getElementById('codicepromo');
+
+const codiceSbagliatoElement = document.getElementById('nonvalido');
 
 const buttonElement = document.getElementById("bottone");
 
@@ -74,18 +76,21 @@ formElement.addEventListener('submit', function (event) {
     // - avvisiamo che il codice non è valido
     
     // Prendo il value dal DOM e lo assegno ad una variabile
-    let sconto = codicePromo.value;
+    let sconto = codicePromoElement.value;
+    // let codiceNonValido = codiceSbagliatoElement.value;
 
     if (sconti.includes(sconto)) {
         sconto = 0.25;
-    } else {
+    } else if (sconto) {
         
+        alert('In codice inserito non è valido');
     }
 
     const scontoApplicato = prezzoBase * sconto; // Number
 
     const prezzoFinale = prezzoBase - scontoApplicato;
     console.log(prezzoFinale);
+
     // Stampo il prezzo nella pagina
     // Utilizzo il risultato del prezzo in base al tipo di lavoro selezionato
     risultatoElement.innerHTML = `${prezzoFinale.toFixed(2)} &euro;`;
